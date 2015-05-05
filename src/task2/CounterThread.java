@@ -28,6 +28,7 @@ public class CounterThread extends Thread {
   /**
    * If count is equals to max count start counting and try to notify while the second one .
    */
+
   @Override
   public void run() {
     synchronized (lock) {
