@@ -32,7 +32,7 @@ public class ThreadCounter extends Thread {
    */
   public void counting() {
     if (count == maxCount) {
-      throw new LimitException();
+      throw new OutOfBorderException();
     }
     count++;
   }
@@ -46,7 +46,7 @@ public class ThreadCounter extends Thread {
       try {
         counting();
         Thread.sleep(slowdown);
-      } catch (LimitException le) {
+      } catch (OutOfBorderException le) {
         break;
       } catch (InterruptedException ie) {
         break;
