@@ -27,7 +27,7 @@ public class ThreadCounter extends Thread {
     count = 0;
     while (!Thread.currentThread().isInterrupted()) {
       try {
-        counting();
+        countTime();
         Thread.sleep(slowdown);
       } catch (OutOfBorderException le) {
         break;
@@ -41,7 +41,7 @@ public class ThreadCounter extends Thread {
   /**
    * Check if the count is equals to max count and increment the count.
    */
-  public void counting() {
+  public void countTime() {
     if (count == maxCount) {
       throw new OutOfBorderException();
     }
