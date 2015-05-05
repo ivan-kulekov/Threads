@@ -7,12 +7,10 @@ package task1;
 public class ThreadCounter extends Thread {
 
   private final int maxCount;
-  private final long slowdown;
   private int count = 0;
 
-  public ThreadCounter(int maxCount, long countSlowdown) {
+  public ThreadCounter(int maxCount) {
     this.maxCount = maxCount;
-    this.slowdown = countSlowdown;
   }
 
   public int getCount() {
@@ -28,7 +26,7 @@ public class ThreadCounter extends Thread {
     while (!Thread.currentThread().isInterrupted()) {
       try {
         countTime();
-        Thread.sleep(slowdown);
+        Thread.sleep(1000);
       } catch (OutOfBorderException le) {
         break;
       } catch (InterruptedException ie) {
