@@ -1,4 +1,4 @@
-package thread;
+package task1;
 
 /**
  * @author Ivan Kulekov (ivankulekov10@gmail.com)
