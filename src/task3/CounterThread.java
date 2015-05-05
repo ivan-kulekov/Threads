@@ -1,4 +1,4 @@
-package task2;
+package task3;
 
 /**
  * @author Ivan Kulekov (ivankulekov10@gmail.com)
