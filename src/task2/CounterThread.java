@@ -21,7 +21,7 @@ public class CounterThread extends Thread {
    *
    * @param thread is the tread to set.
    */
-  public void setThread(CounterThread thread) {
+  public void set(CounterThread thread) {
     this.thr = thread;
   }
 
@@ -35,7 +35,6 @@ public class CounterThread extends Thread {
         count++;
         System.out.println(getName() + "count :" + count);
         lock.notify();
-
         try {
           lock.wait();
         } catch (InterruptedException ie) {
