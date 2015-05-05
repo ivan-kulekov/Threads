@@ -21,5 +21,7 @@ public class ThreadDemo {
 
     counter.interrupt();
     System.out.println("count " + counter.getCount());
+
+
   }
 }

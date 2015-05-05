@@ -31,12 +31,12 @@ public class ThreadCounter extends Thread {
     while (!Thread.currentThread().isInterrupted()) {
       try {
         if (count == maxCount) {
-          throw new OutOfBorderException();
-        } else {
-          count++;
+          throw new OutOfBorderExceptionIE("Time is over ");
         }
-        Thread.sleep(1000);
-      } catch (OutOfBorderException le) {
+        count++;
+        sleep(1000);
+      } catch (OutOfBorderExceptionIE le) {
+        System.out.println(le.getMessage());
         break;
       } catch (InterruptedException ie) {
         break;
