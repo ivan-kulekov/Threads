@@ -15,11 +15,17 @@ public class ThreadCounter extends Thread {
     this.maxCount = maxCount;
   }
 
-
+  /**
+   * Set the thread.
+   * @param thread
+   */
   public void set(ThreadCounter thread) {
     this.thr = thread;
   }
 
+  /**
+   * Stop the thread when is interrupted and increment the count if it is not.
+   */
   @Override
   public void run() {
     while (count != maxCount) {
