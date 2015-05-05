@@ -20,27 +20,10 @@ public class ThreadCounter extends Thread {
   }
 
   /**
-   * This method is by default to run the thread.
+   * Start infinity loop count.
    */
   @Override
   public void run() {
-    startCounting();
-  }
-
-  /**
-   * Create a method which is for to count and if the count is equals to max value then throw exception.
-   */
-  public void counting() {
-    if (count == maxCount) {
-      throw new OutOfBorderException();
-    }
-    count++;
-  }
-
-  /**
-   * Create a method which is to start count is the thread is not in interrupted state.
-   */
-  public void startCounting() {
     count = 0;
     while (!Thread.currentThread().isInterrupted()) {
       try {
@@ -53,6 +36,16 @@ public class ThreadCounter extends Thread {
       }
     }
 
+  }
+
+  /**
+   * Check if the count is equals to max count and increment the count.
+   */
+  public void counting() {
+    if (count == maxCount) {
+      throw new OutOfBorderException();
+    }
+    count++;
   }
 
 }
