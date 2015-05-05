@@ -13,6 +13,11 @@ public class ThreadCounter extends Thread {
     this.maxCount = maxCount;
   }
 
+  /**
+   * Get the count value.
+   *
+   * @return the count value
+   */
   public int getCount() {
     return count;
   }
@@ -25,7 +30,11 @@ public class ThreadCounter extends Thread {
     count = 0;
     while (!Thread.currentThread().isInterrupted()) {
       try {
-        countTime();
+        if (count == maxCount) {
+          throw new OutOfBorderException();
+        } else {
+          count++;
+        }
         Thread.sleep(1000);
       } catch (OutOfBorderException le) {
         break;
@@ -33,17 +42,5 @@ public class ThreadCounter extends Thread {
         break;
       }
     }
-
   }
-
-  /**
-   * Check if the count is equals to max count and increment the count.
-   */
-  public void countTime() {
-    if (count == maxCount) {
-      throw new OutOfBorderException();
-    }
-    count++;
-  }
-
 }

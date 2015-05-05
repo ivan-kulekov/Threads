@@ -11,13 +11,13 @@ public class ThreadDemo {
 
   public static void main(String[] args) {
 
-    ThreadCounter counter = new ThreadCounter(500);
+    ThreadCounter counter = new ThreadCounter(5);
 
     counter.start();
 
     System.out.println("Please input some characters and i give you the value of counting :");
     Scanner scn = new Scanner(System.in);
-    scn.next(".*").charAt(0);
+    scn.next().charAt(0);
 
     counter.interrupt();
     System.out.println("count " + counter.getCount());
