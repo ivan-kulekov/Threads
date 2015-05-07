@@ -20,7 +20,7 @@ public class ThreadCounter extends Thread {
    *
    * @param thread
    */
-  public void set(ThreadCounter thread) {
+  public void setTargetTread(ThreadCounter thread) {
     this.thr = thread;
   }
 

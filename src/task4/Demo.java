@@ -8,7 +8,7 @@ public class Demo {
   public static void main(String[] args) {
 
 
-    ListOperation list = new ListItems(3);
+    ListOperation list = new ListOfItems(3);
     ProducerThread producer1 = new ProducerThread(list, "a");
     producer1.setName("Producer 1 ");
 
@@ -25,7 +25,7 @@ public class Demo {
     producer1.start();
     producer2.start();
     producer3.start();
-    producer4.start();
+//    producer4.start();
 
     CustomerThread customer1 = new CustomerThread(list);
     customer1.setName("Customer 1 ");

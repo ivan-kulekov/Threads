@@ -4,7 +4,7 @@ package task4;
  * @author Ivan Kulekov (ivankulekov10@gmail.com)
  * @since May 07 , 2015 11:02
  */
-public class ListItems implements ListOperation {
+public class ListOfItems implements ListOperation {
 
   final int INDEX = -1;
 
@@ -12,7 +12,7 @@ public class ListItems implements ListOperation {
 
   private int index = -1;
 
-  public ListItems(int listLength) {
+  public ListOfItems(int listLength) {
     list = new Object[listLength];
   }
 

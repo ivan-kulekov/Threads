@@ -10,6 +10,7 @@ public class CustomerThread extends Thread {
 
 
   public CustomerThread(ListOperation listOperation) {
+
     this.listOperation = listOperation;
   }
 
@@ -17,6 +18,5 @@ public class CustomerThread extends Thread {
   public void run() {
     listOperation.remove();
     System.out.println(getName() + "-> remove");
-
   }
 }

@@ -15,8 +15,8 @@ public class Demo {
     thr2.setName("Thread 2:");
     thr2.setPriority(Thread.MAX_PRIORITY);
 
-    thr1.set(thr2);
-    thr2.set(thr1);
+    thr1.setTargetTread(thr2);
+    thr2.setTargetTread(thr1);
 
     thr1.start();
     thr2.start();

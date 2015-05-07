@@ -19,9 +19,10 @@ public class CounterThread extends Thread {
   /**
    * Set the thread witch we start.
    *
-   * @param thread is the tread to set.
+   * @param thread is the tread to setTargetTread.
    */
-  public void set(CounterThread thread) {
+  public void setTargetTread(CounterThread thread) {
+
     this.thr = thread;
   }
 

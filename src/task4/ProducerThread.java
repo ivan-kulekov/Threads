@@ -17,6 +17,6 @@ public class ProducerThread extends Thread {
   @Override
   public void run() {
     listOperation.add(symbol);
-    System.out.println(getName() + "-> add ");
+    System.out.println(getName() + "-> add " + symbol);
   }
 }
