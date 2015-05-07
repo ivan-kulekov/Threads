@@ -29,7 +29,7 @@ public class ThreadTimeout<K, D> extends Thread {
         Thread.sleep(maxTime);
         break;
       } catch (InterruptedException ie) {
-        System.out.println("Reset timer for -> " + getName());
+        System.out.println("Renew timer for -> " + getName());
       }
     }
     if (table.containsValue(this)) {
