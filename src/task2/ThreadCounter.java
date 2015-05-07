@@ -17,6 +17,7 @@ public class ThreadCounter extends Thread {
 
   /**
    * Set the thread.
+   *
    * @param thread
    */
   public void set(ThreadCounter thread) {
@@ -26,15 +27,18 @@ public class ThreadCounter extends Thread {
   /**
    * Stop the thread when is interrupted and increment the count if it is not.
    */
+
   @Override
   public void run() {
-    while (count != maxCount) {
-      if (isInterrupted()) {
-        System.out.println(getName() + "has been stopped");
+    while (!Thread.currentThread().isInterrupted()) {
+      if (count == maxCount) {
+        System.out.println(getName() + "-> has been Stopped !!!");
         break;
       }
+
       count++;
       System.out.println(getName() + "count: " + count);
+
     }
     thr.interrupt();
   }

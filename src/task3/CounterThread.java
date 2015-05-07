@@ -28,14 +28,16 @@ public class CounterThread extends Thread {
   /**
    * If count is equals to max count start counting and try to notify while the second one .
    */
-
   @Override
   public void run() {
     synchronized (lock) {
-      while (count != maxCount) {
-        count++;
-        System.out.println(getName() + "count :" + count);
-        lock.notify();
+      while (!Thread.currentThread().isInterrupted()) {
+
+        if (count != maxCount) {
+          count++;
+          System.out.println(getName() + "count :" + count);
+          lock.notify();
+        }
         try {
           lock.wait();
         } catch (InterruptedException ie) {

@@ -11,7 +11,7 @@ public class ThreadDemo {
 
   public static void main(String[] args) {
 
-    ThreadCounter counter = new ThreadCounter(5);
+    ThreadCounter counter = new ThreadCounter(500);
 
     counter.start();
 
@@ -21,7 +21,6 @@ public class ThreadDemo {
 
     counter.interrupt();
     System.out.println("count " + counter.getCount());
-
 
   }
 }
