@@ -19,9 +19,9 @@ public class CounterThread extends Thread {
   /**
    * Set the thread witch we start.
    *
-   * @param thread is the tread to setTargetTread.
+   * @param thread is the tread to setTargetThread.
    */
-  public void setTargetTread(CounterThread thread) {
+  public void setTargetThread(CounterThread thread) {
 
     this.thr = thread;
   }
@@ -31,9 +31,9 @@ public class CounterThread extends Thread {
    */
   @Override
   public void run() {
-    synchronized (lock) {
-      while (!Thread.currentThread().isInterrupted()) {
 
+    while (!Thread.currentThread().isInterrupted()) {
+      synchronized (lock) {
         if (count != maxCount) {
           count++;
           System.out.println(getName() + "count :" + count);
@@ -45,7 +45,8 @@ public class CounterThread extends Thread {
           break;
         }
       }
-      thr.interrupt();
+
     }
+    thr.interrupt();
   }
 }

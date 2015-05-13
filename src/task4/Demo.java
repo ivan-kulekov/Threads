@@ -25,7 +25,8 @@ public class Demo {
     producer1.start();
     producer2.start();
     producer3.start();
-//    producer4.start();
+    producer4.start();
+
 
     CustomerThread customer1 = new CustomerThread(list);
     customer1.setName("Customer 1 ");
@@ -34,6 +35,6 @@ public class Demo {
     customer2.setName("Customer 2 ");
 
     customer1.start();
-//    customer2.start();
+    customer2.start();
   }
 }

@@ -28,6 +28,7 @@ public class TimeoutHashTable<K, V> {
   public V get(String key) {
     if (table.containsKey(key)) {
       table.get(key).interrupt();
+      table.put((K) key, new ThreadTimeout<K, V>(table, 1000, table.get(key).getData(), (K) key));
       return table.get(key).getData();
     }
     return null;

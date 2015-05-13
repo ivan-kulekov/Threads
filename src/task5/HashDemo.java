@@ -23,12 +23,18 @@ public class HashDemo {
     table.put("fruitMango", fruitMango);
 
 
-    System.out.println(table.get("fruitBanana"));
+    System.out.println(table.get("fruitApple"));
     table.get("fruitOrange");
 
     System.out.println(table.get("fruitOrange"));
 
-    System.out.println(table.get("fruitMango"));
-
+    try {
+      Thread.sleep(100);
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
+    System.out.println(table.get("fruitBerry"));
   }
+
 }
+

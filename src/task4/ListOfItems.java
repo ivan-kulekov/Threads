@@ -4,7 +4,8 @@ package task4;
  * @author Ivan Kulekov (ivankulekov10@gmail.com)
  * @since May 07 , 2015 11:02
  */
-public class ListOfItems implements ListOperation {
+public class
+        ListOfItems implements ListOperation {
 
   final int INDEX = -1;
 
