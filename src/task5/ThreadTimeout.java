@@ -22,6 +22,9 @@ public class ThreadTimeout<K, D> extends Thread {
     this.key = key;
   }
 
+  /**
+   * Sleep time , then if the key contains delete him.
+   */
   @Override
   public void run() {
     while (true) {
@@ -37,7 +40,11 @@ public class ThreadTimeout<K, D> extends Thread {
     }
   }
 
-
+  /**
+   * Get the data
+   *
+   * @return
+   */
   public D getData() {
     return data;
   }

@@ -17,14 +17,24 @@ public class TimeoutHashTable<K, V> {
     this.maxCount = maxCount;
   }
 
-
+  /**
+   * Put the key and value to the table and start the thread.
+   *
+   * @param key   is the key to put.
+   * @param value is the value to put.
+   */
   public void put(K key, V value) {
     ThreadTimeout<K, V> thread = new ThreadTimeout<K, V>(this.table, maxCount, value, key);
     table.put(key, thread);
     thread.start();
   }
 
-
+  /**
+   * Get the key if contains and stop the thread , then put again and start the thread.
+   *
+   * @param key is the key.
+   * @return for returned value.
+   */
   public V get(String key) {
     if (table.containsKey(key)) {
       table.get(key).interrupt();
@@ -34,6 +44,12 @@ public class TimeoutHashTable<K, V> {
     return null;
   }
 
+  /**
+   * To remove the key.
+   *
+   * @param key for remove.
+   * @return the value after remove.
+   */
   public V remove(K key) {
     if (table.containsKey(key)) {
       return table.remove(key).getData();
