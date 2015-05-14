@@ -10,7 +10,7 @@ import java.util.Map;
 public class TimeoutHashTable<K, V> {
 
 
-  private final int maxCount;
+  private int maxCount;
   private Map<K, ThreadTimeout<K, V>> table = new Hashtable<K, ThreadTimeout<K, V>>();
 
   public TimeoutHashTable(int maxCount) {
@@ -37,8 +37,7 @@ public class TimeoutHashTable<K, V> {
    */
   public V get(String key) {
     if (table.containsKey(key)) {
-      table.get(key).interrupt();
-      table.put((K) key, new ThreadTimeout<K, V>(table, 1000, table.get(key).getData(), (K) key));
+      table.get(key).resetTimer();
       return table.get(key).getData();
     }
     return null;
@@ -57,5 +56,7 @@ public class TimeoutHashTable<K, V> {
     return null;
   }
 
+  private void resetTimer() {
 
+  }
 }

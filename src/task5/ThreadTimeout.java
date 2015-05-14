@@ -48,4 +48,9 @@ public class ThreadTimeout<K, D> extends Thread {
   public D getData() {
     return data;
   }
+
+
+  public void resetTimer() {
+    maxTime = 0;
+  }
 }
